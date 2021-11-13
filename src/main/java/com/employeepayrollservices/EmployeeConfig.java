@@ -11,13 +11,17 @@ public class EmployeeConfig {
 		String USER_NAME = "root";
 		String PASSWORD = "root";
 		Connection connection = null;
+		// Use the try block for checking connection
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Drivers loaded!!");
 			connection = DriverManager.getConnection(URL_JD, USER_NAME, PASSWORD);
 			System.out.println("connection Established!!");
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			// Use the catch block for the handle the exception
+		} catch (ClassNotFoundException e) {
+			throw new EmployeeException("invalid driver");
+		} catch (SQLException throwables) {
+			throw new EmployeeException("Invalid get connection parameters");
 		}
 		return connection;
 	}
