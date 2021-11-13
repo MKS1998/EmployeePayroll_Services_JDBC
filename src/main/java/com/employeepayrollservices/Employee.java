@@ -1,5 +1,6 @@
 package com.employeepayrollservices;
 
+import java.util.ArrayList;
 /*
  * Creating Class for the Employee
  */
@@ -8,8 +9,17 @@ public class Employee {
 	int EmpId;
 	String EmpName, PhoneNumber, Address, Department, EmpStart, Gender;
 	double BasicPay, Deductions, TaxablePay, IncomeTax, NetPay;
-	
-	//Using the getter setter
+	ArrayList<Employee> empList;
+
+	// Using the getter setter
+	public ArrayList<Employee> getEmpList() {
+		return empList;
+	}
+
+	public void setEmpList(ArrayList<Employee> empList) {
+		this.empList = empList;
+	}
+
 	public int getEmpId() {
 		return EmpId;
 	}
@@ -105,14 +115,25 @@ public class Employee {
 	public void setNetPay(double netPay) {
 		NetPay = netPay;
 	}
+
 	/*
 	 * creating the method for the toString to collect all the employee data
 	 */
 	@Override
-	public String toString() {
-		return "Employee{" + "EmpId=" + EmpId + ", EmpName='" + EmpName + '\'' + ", PhoneNumber='" + PhoneNumber + '\''
-				+ ", Address='" + Address + '\'' + ", Department='" + Department + '\'' + ", EmpStart='" + EmpStart
-				+ '\'' + ", Gender='" + Gender + '\'' + ", BasicPay=" + BasicPay + ", Deductions=" + Deductions
-				+ ", TaxablePay=" + TaxablePay + ", IncomeTax=" + IncomeTax + ", NetPay=" + NetPay + '}';
-	}
+	 public String toString() {
+        return "model.Employee{" +
+                "EmpId=" + EmpId +
+                ", EmpName='" + EmpName + '\'' +
+                ", PhoneNumber='" + PhoneNumber + '\'' +
+                ", Address='" + Address + '\'' +
+                ", Department='" + Department + '\'' +
+                ", EmpStart='" + EmpStart + '\'' +
+                ", Gender='" + Gender + '\'' +
+                ", BasicPay=" + BasicPay +
+                ", Deductions=" + Deductions +
+                ", TaxablePay=" + TaxablePay +
+                ", IncomeTax=" + IncomeTax +
+                ", NetPay=" + NetPay +
+                '}';
+    }
 }
