@@ -1,47 +1,40 @@
 package com.employeepayrollservices;
 
 import java.util.ArrayList;
-/*
- * Creating Class for the Employee
+
+/**
+ * Purpose: This class is used for getter and setter methods
+ * 
  */
-
 public class Employee {
-	int EmpId;
-	String EmpName, PhoneNumber, Address, Department, EmpStart, Gender;
+	//variable
+	int ID;
+	int PhoneNumber;
+	String Name, Address, Department, Start, Gender;
 	double BasicPay, Deductions, TaxablePay, IncomeTax, NetPay;
-	ArrayList<Employee> empList;
 
-	// Using the getter setter
-	public ArrayList<Employee> getEmpList() {
-		return empList;
+	public int getID() {
+		return ID;
 	}
 
-	public void setEmpList(ArrayList<Employee> empList) {
-		this.empList = empList;
+	public void setID(int iD) {
+		ID = iD;
 	}
 
-	public int getEmpId() {
-		return EmpId;
-	}
-
-	public void setEmpId(int empId) {
-		EmpId = empId;
-	}
-
-	public String getEmpName() {
-		return EmpName;
-	}
-
-	public void setEmpName(String empName) {
-		EmpName = empName;
-	}
-
-	public String getPhoneNumber() {
+	public int getPhoneNumber() {
 		return PhoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		PhoneNumber = phoneNumber;
+	public void setPhoneNumber(int num) {
+		PhoneNumber = num;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
 	}
 
 	public String getAddress() {
@@ -60,12 +53,12 @@ public class Employee {
 		Department = department;
 	}
 
-	public String getEmpStart() {
-		return EmpStart;
+	public String getStart() {
+		return Start;
 	}
 
-	public void setEmpStart(String empStart) {
-		EmpStart = empStart;
+	public void setStart(String Start) {
+		Start = Start;
 	}
 
 	public String getGender() {
@@ -116,24 +109,12 @@ public class Employee {
 		NetPay = netPay;
 	}
 
-	/*
-	 * creating the method for the toString to collect all the employee data
-	 */
 	@Override
-	 public String toString() {
-        return "model.Employee{" +
-                "EmpId=" + EmpId +
-                ", EmpName='" + EmpName + '\'' +
-                ", PhoneNumber='" + PhoneNumber + '\'' +
-                ", Address='" + Address + '\'' +
-                ", Department='" + Department + '\'' +
-                ", EmpStart='" + EmpStart + '\'' +
-                ", Gender='" + Gender + '\'' +
-                ", BasicPay=" + BasicPay +
-                ", Deductions=" + Deductions +
-                ", TaxablePay=" + TaxablePay +
-                ", IncomeTax=" + IncomeTax +
-                ", NetPay=" + NetPay +
-                '}';
-    }
+	public String toString() {
+		return "Employee [ID=" + ID + ", PhoneNumber=" + PhoneNumber + ", Name=" + Name + ", Address=" + Address
+				+ ", Department=" + Department + ", Start=" + Start + ", Gender=" + Gender + ", BasicPay=" + BasicPay
+				+ ", Deductions=" + Deductions + ", TaxablePay=" + TaxablePay + ", IncomeTax=" + IncomeTax + ", NetPay="
+				+ NetPay + "]";
+	}
+
 }
